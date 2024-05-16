@@ -3,7 +3,6 @@
 /////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #include "UART.h"
 
-//int main(){}
 void UART0_Init( unsigned long  baudrate ){
 unsigned long uartIBRD, uartFBRD,dumyDelay;
 	double CLDIV = (clock / (16.0 * baudrate));
