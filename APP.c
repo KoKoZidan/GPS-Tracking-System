@@ -81,7 +81,7 @@ if(displacement>100)
 			 wait_ms(3000);
 
 }
- if(Button_Read('f',0)==1)
+ if(Button_Read('f',0)==0)
 {
 	LED_ON('y');
 			 wait_ms(3000);
