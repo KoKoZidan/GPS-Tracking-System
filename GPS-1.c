@@ -19,7 +19,7 @@ return result;
 
 //readGPS is  a function for getting longitude and latitude and storing them as character arrays;
  void readGPS(char * lat, char * log){
-	 while(1){
+	 
 //$GPRMC,200751.00,A,4047.32510,N,02929.63031,E,9.879,105.80,301117,,,A*6C
 char c;
 int i=0,j=0,result=1;
@@ -114,7 +114,7 @@ int i=0,j=0,result=1;
         }
     }
 
- }}
+ }
 
 double toRadians(double degrees) {
     return degrees * PPI / 180.0;
