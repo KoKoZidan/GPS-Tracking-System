@@ -7,16 +7,12 @@ const double PPI=3.14159265358979323846;
 	//###### HOW TO BE CALLED ######
 	// CALL readGPSDouble AND GIVE IT TWO POINTERS TO SAVE IN THESE LOCATIONS THE FLOAT VALUE OF THE TWO LAT AND LOG
 	// CALL CALC DISTANCE AFTER  making sure that the given log and lat are suitable
-	double contodoub(char *str){ 
-	double p=0.1; double result;
-while((unsigned)(str-'0')<10) {   result+=(*str-'0')*p;   p=0.1;   ++str; }
-return result;
-	}
+	
 //=================================================================================
 
 //readGPS is  a function for getting longitude and latitude and storing them as character arrays;
  void readGPS(char * lat, char * log){
-	 while(1){
+	
 //$GPRMC,200751.00,A,4047.32510,N,02929.63031,E,9.879,105.80,301117,,,A*6C
 char c;
 int i=0,j=0,result=1;
@@ -111,7 +107,7 @@ int i=0,j=0,result=1;
         }
     }
 
- }}
+ }
 
 double toRadians(double degrees) {
     return degrees * PPI / 180.0;
