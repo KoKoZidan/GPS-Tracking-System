@@ -18,7 +18,7 @@ double ConvertToDouble(char* str);
 double convertDMtoDD(double coordinate);
 
 double convertDMMtoDD(double coordinate);
-double contodoub(char *str);
+
 
 
 
