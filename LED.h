@@ -1,3 +1,7 @@
+
+/////////////%%%%%%%%%%%% Student Name :  Sama Tarik      %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101631         %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #include "stdint.h"
 #ifndef LED_H_
 #include "../../Utilities/tm4c123gh6pm.h"
