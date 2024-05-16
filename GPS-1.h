@@ -1,3 +1,6 @@
+/////////////%%%%%%%%%%%% Student Name :  Sama Tarik      %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101631         %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #ifndef GPS_H_INCLUDED
 #define GPS_H_INCLUDED
 #include <stdio.h>
