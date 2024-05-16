@@ -1,3 +1,6 @@
+/////////////%%%%%%%%%%%% Student Name :  Kawthar Mohamed %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2001974         %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #include "stdint.h"
 #ifndef UART_H_
 #include "../../Utilities/tm4c123gh6pm.h"
