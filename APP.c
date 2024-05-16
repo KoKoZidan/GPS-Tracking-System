@@ -54,9 +54,9 @@ UART0_StringTX("\nout of read gps\n");
 //	UART0_StringTX(log);
 latDM =ConvertToDouble(lat);
 lonDMM =ConvertToDouble(log);
-latDD = convertDMtoDD(latDM);
+latDD = convertDMtoDD(latDM);//convert double to degree
 lonDD = convertDMMtoDD(lonDMM);
-displacement += calculateDistance(latDD1, lonDD1,latDM,lonDMM); 
+displacement += calculateDistance(latDD1, lonDD1,latDD,lonDD); 
 latDD1=latDD;
 lonDD1=lonDD;
 		 wait_ms(3000);
