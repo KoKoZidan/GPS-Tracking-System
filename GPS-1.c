@@ -1,3 +1,6 @@
+/////////////%%%%%%%%%%%% Student Name :  Sama  Tarik     %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101631         %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #include "GPS.h"
 #include <string.h>
 #define RADIUS_OF_EARTH 6371000.0 // Earth's radius in meters
