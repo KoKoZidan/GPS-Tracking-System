@@ -7,7 +7,7 @@ int main(){
 char k;
 char lat[20] = {0};
 char log[20] = {0};	
-double latitude_2=30.064069;
+double latitude_2=30.064069; //final distenation
 double logitude_2=31.279220;
 double displacement=0;
 double latDM;
@@ -22,12 +22,11 @@ double lonDD1;
 //SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_INT | SYSCTL_MAIN_OSC_DIS);
 UART0_Init(  9600 );	
 UART5_Init(  9600 ); 
-UART7_Init(  9600 ); 
 LED_init();
 Button_InitPullUp('f',0);
 readGPS(lat,log);
 	wait_ms(1000);
-latDM1 =ConvertToDouble(lat);
+latDM1 =ConvertToDouble(lat);//start point
 lonDMM1 =ConvertToDouble(log);
 latDD1 =convertDMMtoDD(latDM);
 lonDD1 = convertDMMtoDD(lonDMM);
@@ -53,11 +52,11 @@ UART0_StringTX("\nout of read gps\n");
 //	UART0_StringTX("LOG:");
 
 //	UART0_StringTX(log);
-latDM =contodoub(lat);
-lonDMM =contodoub(log);
+latDM =ConvertToDouble(lat);
+lonDMM =ConvertToDouble(log);
 latDD = convertDMtoDD(latDM);
 lonDD = convertDMMtoDD(lonDMM);
-displacement += calculateDistance(latDD1, lonDD1,latitude_2,logitude_2); 
+displacement += calculateDistance(latDD1, lonDD1,latDM,lonDMM); 
 latDD1=latDD;
 lonDD1=lonDD;
 		 wait_ms(3000);
