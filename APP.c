@@ -1,8 +1,11 @@
+/////////////%%%%%%%%%%%% Student Name :  Mai Mostafa     %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101474         %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #include "APP.h"
 #include <math.h>
 #include <stdlib.h>
 void SystemInit(){}
-//#include "driverlib/sysctl.h"
+
 int main(){
 char k;
 char lat[20] = {0};
@@ -28,8 +31,8 @@ readGPS(lat,log);
 	wait_ms(1000);
 latDM1 =ConvertToDouble(lat);//start point
 lonDMM1 =ConvertToDouble(log);
-latDD1 =convertDMMtoDD(latDM);
-lonDD1 = convertDMMtoDD(lonDMM);
+latDD1 =convertDMtoDD(latDM);
+lonDD1 = convertDMtoDD(lonDMM);
 
 while(1){ 
 	
@@ -55,7 +58,7 @@ UART0_StringTX("\nout of read gps\n");
 latDM =ConvertToDouble(lat);
 lonDMM =ConvertToDouble(log);
 latDD = convertDMtoDD(latDM);//convert double to degree
-lonDD = convertDMMtoDD(lonDMM);
+lonDD = convertDMtoDD(lonDMM);
 displacement += calculateDistance(latDD1, lonDD1,latDD,lonDD); 
 latDD1=latDD;
 lonDD1=lonDD;
@@ -96,7 +99,6 @@ if(displacement>100)
 	
 	UART0_StringTX("7amdellah 3ala elsalama<3");
 			 wait_ms(3000);
-
 
 }	
 }
