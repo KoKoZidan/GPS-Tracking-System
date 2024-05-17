@@ -1,8 +1,11 @@
+/////////////%%%%%%%%%%%% Student Name :  Rahma  Essam   %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101625        %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17             %%%%%%%%%%%%/////////////
 #ifndef SYSTICK_H_
 #define SYSTICK_H_
 #include "stdint.h"
-#include "../../Utilities/tm4c123gh6pm.h"
-#include "../../Utilities/bitManipulation.h"
+#include "tm4c123gh6pm.h"
+#include "bitManipulation.h"
 
 
 #define MAX 0x00FFFFFF      /* MAX value of the Reload Register */
@@ -14,4 +17,4 @@ void delay_s(void);
 void wait_s(uint32_t num);
 void delay_ms(void);
 void wait_ms(uint32_t num);
-#endif /* SYSTICK_H_ */
+#endif                        /* SYSTICK_H_ */
