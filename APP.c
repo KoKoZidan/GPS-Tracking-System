@@ -22,7 +22,7 @@ double lonDMM1;
 double latDD1;
 double lonDD1;
 //this function is called to set the clock of the tiva to 16MHZ
-//SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_INT | SYSCTL_MAIN_OSC_DIS);
+
 UART0_Init(  9600 );	
 UART5_Init(  9600 ); 
 LED_init();
@@ -42,19 +42,9 @@ readGPS(lat,log);
 
 
 
-//	UART0_StringTX("\r\n");
+
 UART0_StringTX("\nout of read gps\n");
-		 //wait_ms(3000);
 
-//	UART0_StringTX(lat);
-
-//	delay_s();
-
-//	UART0_CharTX(',');
-
-//	UART0_StringTX("LOG:");
-
-//	UART0_StringTX(log);
 latDM =ConvertToDouble(lat);
 lonDMM =ConvertToDouble(log);
 latDD = convertDMtoDD(latDM);//convert double to degree
