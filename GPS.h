@@ -1,4 +1,4 @@
-/////////////%%%%%%%%%%%% Student Name :  Yassmine Saeed     %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student Name :  Yassmine Saeed  %%%%%%%%%%%%/////////////
 /////////////%%%%%%%%%%%% Student ID   :  2101135         %%%%%%%%%%%%/////////////
 /////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #ifndef GPS_H_INCLUDED
@@ -20,7 +20,6 @@ double ConvertToDouble(char* str);
 
 double convertDMtoDD(double coordinate);
 
-double convertDMMtoDD(double coordinate);
 
 
 
