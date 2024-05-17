@@ -1,3 +1,6 @@
+/////////////%%%%%%%%%%%% Student Name :  Alaa Youssef   %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2100729        %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17             %%%%%%%%%%%%/////////////
 #include "LCD.h"
 // if u want to use 8 bit mode replace with this
 //init
