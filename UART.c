@@ -24,25 +24,25 @@ unsigned long uartIBRD, uartFBRD,dumyDelay;
 	GPIO_PORTA_PCTL_R |= 0x00000011;
 
 	}
-/////////////////TRANSMIT CHAR///////////////
+                        /////////////////TRANSMIT CHAR///////////////
 void UART0_CharTX( unsigned char ch){				 
  while((UART0_FR_R&0x02) != 0){}
  UART0_DR_R = ch; 
+		 }
 
-			 }
 			//////////// RECEIVE CHAR /////////
 unsigned char UART0_CharRX(){
 	while((UART0_FR_R&0x10) != 0){}
 	return UART0_DR_R&0xFF;
-
 			 }
+
 			 /////////////STRING TRANSMIT ///////////////
    void UART0_StringTX(char *str){
 		 while(*str!='\0'){
 				UART0_CharTX(*str );
 				str++;
-		 
 		 } }
+
 			 ///////////// STRING RECEIVE ///////////
 void UART0_StringRX(char *str, char stopCh){		
  char c = UART0_CharRX();
@@ -53,7 +53,30 @@ void UART0_StringRX(char *str, char stopCh){
 	}
 	*str = 0x00;
 }
-////////// UARTINITIALIZATION ///////
+//////////////////////// Send Distance ////////////////////////////////
+void UART0SendFloat(float num) {
+		int i;
+    char buffer[50];
+    //sprintf(buffer, sizeof(buffer), "%f", num);
+
+   for( i=0 ; buffer[i] != '\0'; i++) {
+        while((UART0_FR_R & UART_FR_TXFF)==UART_FR_TXFF); // Wait until the transmitter is not full
+        UART0_DR_R = buffer[i]; // Transmit the character
+    }
+}
+/////////// Casting double to char array ////////////////
+void ftoa (double number, char* array){
+  number *= 10000;
+	int index0,index1,int_cast;
+		char temp[10];
+	 index0 = 0; index1 = 0; int_cast = (int) number;
+	
+	while (int_cast){
+		temp[index0++] = 48 + (char)(int_cast % 10);
+		int_cast /= 10;
+	}	}
+
+       ////////// UARTINITIALIZATION ///////
 void UART5_Init( unsigned long  baudrate ){
 	unsigned long uartIBRD, uartFBRD,dumyDelay;
 	double CLDIV = (clock / (16.0 * baudrate));
@@ -63,7 +86,6 @@ void UART5_Init( unsigned long  baudrate ){
 	while((SYSCTL_PRUART_R&(0x20))==0){}
 	SET_BIT(SYSCTL_RCGCGPIO_R,4);
 	dumyDelay= 1+1;
- // while((SYSCTL_PRGPIO_R & (0x20)) == 0) {}
 	CLEAR_BIT(UART5_CTL_R,0);
 	UART5_IBRD_R = uartIBRD;
 	UART5_FBRD_R = uartFBRD;
@@ -73,27 +95,27 @@ void UART5_Init( unsigned long  baudrate ){
 	GPIO_PORTE_AMSEL_R &= ~0x30;
 	GPIO_PORTE_AFSEL_R |= 0x30;
 	GPIO_PORTE_PCTL_R |= 0x00110000;
-
 	}
-/////////////////TRANSMIT CHAR///////////////
+
+                        /////////////////TRANSMIT CHAR///////////////
 void UART5_CharTX( unsigned char ch){				 
  while((UART5_FR_R&0x02) != 0){}
  UART5_DR_R = ch; 
-
 			 }
+
 			//////////// RECEIVE CHAR /////////
 unsigned char UART5_CharRX(){
 	while((UART5_FR_R&0x10) != 0){}
 	return UART5_DR_R&0xFF;
-
 			 }
+
 			 /////////////STRING TRANSMIT ///////////////
    void UART5_StringTX(char *str){
 		 while(*str != '\0'){
 				UART5_CharTX(*str );
 				str++;
-		 
 		 } }
+
 			 ///////////// STRING RECEIVE ///////////
 void UART5_StringRX(char *str, char stopCh){		
  char c = UART5_CharRX();
@@ -104,7 +126,7 @@ void UART5_StringRX(char *str, char stopCh){
 	}
 	*str = 0x00;
 }
-/////////////////////UART2/////////////////
+                         /////////////////////UART2/////////////////
 
 void UART2_Init( unsigned long  baudrate ){
 	unsigned long uartIBRD, uartFBRD,dumyDelay;
@@ -201,28 +223,6 @@ void UART7_StringRX(char *str, char stopCh){
 	*str = 0x00;
 }
 
-void UART0SendFloat(float num) {
-		int i;
-    char buffer[50];
-    //sprintf(buffer, sizeof(buffer), "%f", num);
 
-   for( i=0 ; buffer[i] != '\0'; i++) {
-        while((UART0_FR_R & UART_FR_TXFF)==UART_FR_TXFF); // Wait until the transmitter is not full
-        UART0_DR_R = buffer[i]; // Transmit the character
-    }
-}
-
-void ftoa (double number, char* array){
-  number *= 10000;
-	int index0,index1,int_cast;
-		char temp[10];
-	 index0 = 0; index1 = 0; int_cast = (int) number;
-	//char temp[10];
-
-
-	while (int_cast){
-		temp[index0++] = 48 + (char)(int_cast % 10);
-		int_cast /= 10;
-	}	}
 
 	
