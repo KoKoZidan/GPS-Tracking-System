@@ -1,8 +1,11 @@
+/////////////%%%%%%%%%%%% Student Name :  Rahma  Essam   %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101625        %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17             %%%%%%%%%%%%/////////////
 #include "Systick.h"
 void delay_s(void){
 
     NVIC_ST_CTRL_R = 0; // disable SysTick during setup
-    NVIC_ST_RELOAD_R = 16000000 - 1;
+    NVIC_ST_RELOAD_R = 16000000 - 1; //1 sec
     NVIC_ST_CURRENT_R = 0; //clear current register and COUNTFLAG
     NVIC_ST_CTRL_R = 0x05; 
     while((NVIC_ST_CTRL_R&0x10000) == 0);
