@@ -1,11 +1,14 @@
+/////////////%%%%%%%%%%%% Student Name :  Alaa Youssef   %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2100729        %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17             %%%%%%%%%%%%/////////////
 #ifndef LCD_H_
 #define LCD_H_
-#include "stdint.h"
-#include "../../Utilities/tm4c123gh6pm.h"
-#include "../../Utilities/bitManipulation.h"
-#include "../../MCAL/Systick/Systick.h"
-#include "stdio.h"
-#include "string.h"
+#include <stdint.h>
+#include "tm4c123gh6pm.h"
+#include "bitManipulation.h"
+#include "Systick.h"
+#include <stdio.h>
+#include <string.h>
 
 
 
