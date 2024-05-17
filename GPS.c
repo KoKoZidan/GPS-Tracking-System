@@ -1,3 +1,6 @@
+/////////////%%%%%%%%%%%% Student Name :  Yassmin Saeed   %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Student ID   :  2101135         %%%%%%%%%%%%/////////////
+/////////////%%%%%%%%%%%% Team Number  :  17              %%%%%%%%%%%%/////////////
 #include "GPS.h"
 #include <string.h>
 #define RADIUS_OF_EARTH 6371000.0 // Earth's radius in meters
@@ -42,12 +45,12 @@ int i=0,j=0,result=1;
                                 // Storing data of latitude
                                 //int i = 0;
                                 c = UART5_CharRX();//A
-																if(c=='A'){
-																//UART0_CharTX(c);
-																c = UART5_CharRX();//,
-																//UART0_CharTX(c);
-																c = UART5_CharRX();//FIRST LAT NUMBER
-																//UART0_CharTX(c);
+													if(c=='A'){
+												        //UART0_CharTX(c);
+													c = UART5_CharRX();//,
+													//UART0_CharTX(c);
+													c = UART5_CharRX();//FIRST LAT NUMBER
+													//UART0_CharTX(c);
                                 while (c != ',') {
                                     lat[i++] = c;
                                     c = UART5_CharRX();//UART0_CharTX(c);
@@ -56,42 +59,37 @@ int i=0,j=0,result=1;
 ////$GPRMC,200751.00,A,4047.32510,N,02929.63031,E,9.879,105.80,301117,,,A*6C
                                 // Ignoring N/S indicator
                                 c = UART5_CharRX();
-																if(c=='N'){
-																//UART0_CharTX(c);
+											                  if(c=='N'){
+													//UART0_CharTX(c);
 																
-																c = UART5_CharRX();//UART0_CharTX(c);
-																c = UART5_CharRX();//UART0_CharTX(c);
+													c = UART5_CharRX();//UART0_CharTX(c);
+													c = UART5_CharRX();//UART0_CharTX(c);
                                 // Ignoring characters till longitude characters
-//                                while (c != ',') {
-//                                    c = ////UART0_CharRX();//UART0_CharTX(c);
-//                                }
-//                                // Storing data of longitude
-//                                //int j = 0;
-//                                c = ////UART0_CharRX();//UART0_CharTX(c);
+
                                 while (c != ',') {
                                     log[j++] = c;
                                     c = UART5_CharRX();//UART0_CharTX(c);
                                 }
-																log[j] = '\0';
-																do{
-																c = UART5_CharRX();//UART0_CharTX(c);
-																}while(c!='*');//after * in GPRMC there are 2 more characters left to send then the message is over
-																
-																c = UART5_CharRX();//UART0_CharTX(c);
-																c = UART5_CharRX();//UART0_CharTX(c);
-																//c = ////UART0_CharRX();//UART0_CharTX(c);
+													log[j] = '\0';
+													do{
+													c = UART5_CharRX();//UART0_CharTX(c);
+													}while(c!='*');//after * in GPRMC there are 2 more characters left to send then the message is over
+														
+													c = UART5_CharRX();//UART0_CharTX(c);
+													c = UART5_CharRX();//UART0_CharTX(c);
+													//c = ////UART0_CharRX();//UART0_CharTX(c);
                                 result = 0; // Successful extraction
 																		 wait_ms(3000);
 
-																UART0_StringTX("\r\n");
-																UART0_StringTX("lat:");
-																UART0_StringTX(lat);
-																delay_s();
+												UART0_StringTX("\r\n");
+											        UART0_StringTX("lat:");
+												UART0_StringTX(lat);
+												delay_s();
 																		 wait_ms(3000);
 
-																UART0_CharTX(',');
-																UART0_StringTX("LOG:");
-																UART0_StringTX(log);
+												UART0_CharTX(',');
+												UART0_StringTX("LOG:");
+												UART0_StringTX(log);
 																		 wait_ms(3000);
 
 
@@ -174,14 +172,6 @@ double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
 
 
 double convertDMtoDD(double coordinate) {
-    int degrees = (int)(coordinate / 100);
-    double minutes = coordinate - degrees * 100;
-    double decimalDegrees = degrees + minutes / 60.0;
-
-    return decimalDegrees;
-}
-
-double convertDMMtoDD(double coordinate) {
     int degrees = (int)(coordinate / 100);
     double minutes = coordinate - degrees * 100;
     double decimalDegrees = degrees + minutes / 60.0;
